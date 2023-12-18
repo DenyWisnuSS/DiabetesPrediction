@@ -54,11 +54,6 @@ if st.button('Test Prediksi Diabetes'):
         else:
             diabetes_diagnosis = 'Pasien Terkena Diabetes'
 
-        if diabetes_prediction[1] == 1:
-            diabetes_diagnosis = 'Pasien Terkena Diabetes'
-        else:
-            diabetes_diagnosis = 'Pasien Tidak Terkena Diabetes'
-
         # Menampilkan hasil prediksi
         st.success(diabetes_diagnosis)
 
