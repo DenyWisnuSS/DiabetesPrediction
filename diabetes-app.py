@@ -42,9 +42,9 @@ diabetes_diagnosis = ''
 if st.button('Test Prediksi Diabetes'):
     try:
         # Mengonversi input ke tipe numerik
-        input_data = [[int(Pregnancies), int(Glucose), int(BloodPressure),
-                       int(SkinThickness), int(Insulin), float(BMI),
-                       float(DiabetesPedigreeFunction), int(Age)]]
+        input_data = [[Pregnancies, Glucose, BloodPressure,
+                       SkinThickness, Insulin, BMI,
+                       DiabetesPedigreeFunction, Age]]
 
         # Prediksi menggunakan model
         diabetes_prediction = diabetes_model.predict(input_data)
