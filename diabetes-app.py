@@ -1,5 +1,6 @@
 import pickle
 import streamlit as st
+import numpy as np
 
 # Membaca model
 diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
@@ -42,9 +43,9 @@ diabetes_diagnosis = ''
 if st.button('Test Prediksi Diabetes'):
     try:
         # Mengonversi input ke tipe numerik
-        input_data = [[Pregnancies, Glucose, BloodPressure,
-                       SkinThickness, Insulin, BMI,
-                       DiabetesPedigreeFunction, Age]]
+        input_data = np.array([[float(Pregnancies), float(Glucose), float(BloodPressure),
+                                float(SkinThickness), float(Insulin), float(BMI),
+                                float(DiabetesPedigreeFunction), float(Age)]])
 
         # Prediksi menggunakan model
         diabetes_prediction = diabetes_model.predict(input_data)
@@ -59,3 +60,5 @@ if st.button('Test Prediksi Diabetes'):
 
     except ValueError:
         st.error('Pastikan semua input adalah angka.')
+    except Exception as e:
+        st.error(f'Terjadi kesalahan: {e}')
