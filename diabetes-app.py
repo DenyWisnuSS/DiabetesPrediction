@@ -49,7 +49,7 @@ if st.button('Test Prediksi Diabetes'):
         # Prediksi menggunakan model
         diabetes_prediction = diabetes_model.predict(input_data)
 
-        if diabetes_prediction[0] == 1:
+        if diabetes_prediction[1] == 1:
             diabetes_diagnosis = 'Pasien Terkena Diabetes'
         else:
             diabetes_diagnosis = 'Pasien Tidak Terkena Diabetes'
